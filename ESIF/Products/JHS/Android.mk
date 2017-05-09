@@ -26,11 +26,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_SRC_FILES := $(call all-java-files-under, src)
 LOCAL_SRC_FILES += $(call all-Iaidl-files-under, src)
 
-ifeq ($(INTEL_MODEM_CTL), true)
-LOCAL_STATIC_JAVA_LIBRARIES := com.intel.internal.telephony.OemTelephony
-else
 LOCAL_SRC_FILES := $(filter-out $(SRC_PATH)/jhs/JhsModem.java, $(LOCAL_SRC_FILES))
-endif
 
 LOCAL_PACKAGE_NAME := jhs
 
