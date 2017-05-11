@@ -243,8 +243,10 @@ void SysfsRegisterParticipants ()
 	EsifUpPm_RegisterParticipant(origin, &sysPart, &newInstance);
 
 	scanThermal();
-	scanPCI();
-	scanPlat();
+	// BIOS is supported on Joule Board, but DPTF use ACPI instead of PCI.
+	// So remove these to avoid their effects.
+	//scanPCI();
+	//scanPlat();
 
 	// On platforms without DPTF BIOS support, the above scanPCI() and
 	// scanPlat() will not result in the creation of the SoC participant and
