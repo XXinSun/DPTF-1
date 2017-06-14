@@ -213,7 +213,7 @@ void ParticipantProxy::setThresholdCrossed(const Temperature& temperature, const
 {
 	m_lastThresholdCrossedTemperature = temperature;
 	m_timeOfLastThresholdCrossed = timestamp;
-	m_policyServices.messageLogging->writeMessageDebug(PolicyMessage(
+	m_policyServices.messageLogging->writeMessageError(PolicyMessage(
 		FLF,
 		"Temperature threshold crossed for participant with temperature " + temperature.toString() + ".",
 		getIndex()));
